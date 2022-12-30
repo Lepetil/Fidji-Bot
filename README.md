@@ -1,11 +1,8 @@
 # Fidji Bot 🏮
 
-<a href="https://discord4j.com"><img align="right" src="https://raw.githubusercontent.com/Discord4J/discord4j-web/master/public/logo.svg?sanitize=true" width=27%></a>
+<a href="https://discord.gg/B4Ud3MuUa9"><img align="right" src="https://avatars.githubusercontent.com/u/115656415?v=4" width=27%></a>
 
-[![Support Server Invite](https://img.shields.io/discord/208023865127862272.svg?color=7289da&label=Discord4J&logo=discord&style=flat-square)](https://discord.gg/d4j)
-[![Maven Central](https://img.shields.io/maven-central/v/com.discord4j/discord4j-core/3.2.svg?style=flat-square)](https://search.maven.org/artifact/com.discord4j/discord4j-core)
-[![Javadocs](https://javadoc.io/badge2/com.discord4j/discord4j-core/3.2.3/javadoc.svg?color=blue&style=flat-square)](https://javadoc.io/doc/com.discord4j/discord4j-core/3.2.3)
-[![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/Discord4J/Discord4J/Java%20CI/master?logo=github&style=flat-square)](https://github.com/Discord4J/Discord4J/actions)
+[![Support Server Invite](https://img.shields.io/discord/1053198161772023859.svg?color=7289da&label=Fidji&logo=discord&style=flat-square)](https://discord.gg/B4Ud3MuUa9)
 
 Discord4J is a fast, powerful, unopinionated, reactive library to enable quick and easy development of Discord bots for Java, Kotlin, and other JVM languages using the official [Discord Bot API](https://discord.com/developers/docs/intro).
 
