@@ -1,421 +1,86 @@
+<img width="150" height="150" align="left" style="float: left; margin: 0 10px 0 0;" alt="Atlanta" src="https://i.goopics.net/lEENx.png">  
+
 # Fidji Bot 🏮
 
-<a href="https://discord.gg/B4Ud3MuUa9"><img align="right" src="https://avatars.githubusercontent.com/u/115656415?v=4" width=27%></a>
+[![](https://img.shields.io/discord/565048515357835264.svg?logo=discord&colorB=7289DA&label=Atlanta%20Support)](https://discord.gg/Za9zxTH)
+[![](https://img.shields.io/discord/568120814776614924.svg?logo=discord&colorB=00BFFF&label=Atlanta%20Emojis)](https://discord.gg/NPkySYKMkN)
+[![](https://img.shields.io/badge/discord.js-v13.0.0--dev-blue.svg?logo=npm)](https://github.com/discordjs)
+[![](https://img.shields.io/badge/patreon-donate-orange.svg)](https://www.patreon.com/androz2091)
+[![](https://www.codefactor.io/repository/github/Androz2091/AtlantaBot/badge)](https://www.codefactor.io/repository/github/Androz2091/AtlantaBot)
 
-[![Support Server Invite](https://img.shields.io/discord/1053198161772023859.svg?color=7289da&label=Fidji&logo=discord&style=flat-square)](https://discord.gg/B4Ud3MuUa9)
+> This bot is used by more than 130,000 Discord users and more than 800 servers.
 
-Discord4J is a fast, powerful, unopinionated, reactive library to enable quick and easy development of Discord bots for Java, Kotlin, and other JVM languages using the official [Discord Bot API](https://discord.com/developers/docs/intro).
+Atlanta is a open source Discord bot coded in JavaScript with [Discord.js](https://discord.js.org) and [Mongoose](https://mongoosejs.com/docs/api.html) by [Androz2091](https://github.com/Androz2091).  
+Feel free to add a star ⭐ to the repository to promote the project!
 
-## 🏃 Quick Example
+## Features
 
-In this example for v3.2, whenever a user sends a `!ping` message the bot will immediately respond with `Pong!`.
+### Complete Bot
 
-```java
-public final class ExampleBot {
+Atlanta offers (non-exhaustive list):
+*   ✉️ Support for commands in direct messages
+*   🇫🇷 Support for translations (illimited languages)
+*   ⚙️ Guild configuration (prefix, ignored channels, etc...)
+*   😀 Commands made pleasant thanks to the many emojis
+*   🗳️ Support for Discordbots.org votes with rewards
 
-  public static void main(final String[] args) {
-    final String token = args[0];
-    final DiscordClient client = DiscordClient.create(token);
-    final GatewayDiscordClient gateway = client.login().block();
+Atlanta also adds **a new mention** like @everyone and @here, the `@someone`, which allows you to pick a random member of the server!
 
-    gateway.on(MessageCreateEvent.class).subscribe(event -> {
-      final Message message = event.getMessage();
-      if ("!ping".equals(message.getContent())) {
-        final MessageChannel channel = message.getChannel().block();
-        channel.createMessage("Pong!").block();
-      }
-    });
+### Many commands
 
-    gateway.onDisconnect().block();
-  }
-}
-```
+Atlanta has a lot of features, with **7 main categories**:
 
-For a full project example, check out our example projects repository [here](https://github.com/Discord4J/example-projects).
+*   👩‍💼 **Administration**: `slowmode`, `welcome`, `addcommand`, `automod`, `backup` and **11** more! 
+*   🚓 **Moderation**: `see-warns`, `setlogs`, `checkinvites`, `poll`, and **6** more! 
+*   🎵 **Music**: `play`, `skip`, `queue`, `np`, and **2** more! 
+*   💰 **Economy**: `profile`, `work`, `badge`, `slots`, `balance`, `leaderboard`, and **6** more! 
+*   👻 **Fun**: `lmg`, `findwords`, `flip`, `lovecalc`, `random` and **6** more! 
+*   🖨️ **General**: `minimize`, `setafk`, `translate`, `remindme`, `hastebin`, `fortnite`, `minecraft` and **10** more! 
+*   👑 **Owner**: `eval`, `getinvite`, `servers-list` and **2** more!
 
-## 🔗 Quick Links
+[See the full commands list](https://www.atlanta-bot.fr/commands)
 
-* [Javadocs](https://www.javadoc.io/doc/com.discord4j/discord4j-core)
-* [Documentation](https://docs.discord4j.com)
-* [Example Projects](https://github.com/Discord4J/example-projects)
-* [Discord](https://discord.gg/d4j)
+### A powerful Dashboard
 
-## 💎 Benefits
+Atlanta has its own dashboard which also offers many features! The dashboard runs with Express and EJS!
 
-* 🚀 **Reactive** - Discord4J follows the [reactive-streams](http://www.reactive-streams.org/) protocol to ensure Discord bots run smoothly and efficiently regardless of size.
+<img align="left" style="float: centrer; margin: 0 10px 0 0;" src="https://zupimages.net/up/19/31/c3ya.png" height="200" width="350"/>
+<img align="center" style="float: left; margin: 0 10px 0 0;" src="https://zupimages.net/up/19/31/vnq5.png" height="200" width="350"/>
+<img align="center" style="float: centrer; margin: 0 10px 0 0;" src="https://zupimages.net/up/19/31/htga.png" height="200" width="350"/>
 
-* 📜 **Official** - Automatic rate limiting, automatic reconnection strategies, and consistent naming conventions are among the many features Discord4J offers to ensure your Discord bots run up to Discord's specifications and to provide the least amount of surprises when interacting with our library.
+You can directly **edit your configuration**, **manage your servers**, **view rankings**, **modify your profile** and much more!
 
-* 🛠️ **Modular** - Discord4J breaks itself into modules to allow advanced users to interact with our API at lower levels to build minimal and fast runtimes or even add their own abstractions.
+> Find the code in the dashboard folder! 
 
-* ⚔️ **Powerful** - Discord4J can be used to develop any bot, big or small. We offer many tools for developing large-scale bots from [custom distribution frameworks](https://github.com/Discord4J/connect), [off-heap caching](https://github.com/Discord4J/Stores/tree/master/redis), and its interaction with Reactor allows complete integration with frameworks such as Spring and Micronaut.
+## Installation
 
-* 🏫 **Community** - We pride ourselves on our inclusive community and are willing to help whenever challenges arise; or if you just want to chat! We offer help ranging from Discord4J specific problems, to general programming and web development help, and even Reactor-specific questions. Be sure to visit us on our [Discord server](https://discord.gg/d4j)!
+### Non-customized version
 
-## 📦 Installation
+If you don't want to edit the code of the bot, a permanent online version is available, which you can invite to your own Discord!   
 
-* [Creating a new Gradle project with IntelliJ](https://www.jetbrains.com/help/idea/getting-started-with-gradle.html) *(recommended)*
-* [Creating a new Maven project with IntelliJ](https://www.jetbrains.com/help/idea/maven-support.html)
-* [Creating a new Gradle project with Eclipse](https://www.vogella.com/tutorials/EclipseGradle/article.html#creating-gradle-projects)
-* [Creating a new Maven project with Eclipse](https://www.vogella.com/tutorials/EclipseMaven/article.html#exercise-create-a-new-maven-enabled-project-via-eclipse)
+[![Discord Bots](https://discordbots.org/api/widget/557445719892688897.svg)](https://discordbots.org/bot/557445719892688897)
 
-### Gradle
-```groovy
-repositories {
-  mavenCentral()
-}
+### Customized version
 
-dependencies {
-  implementation 'com.discord4j:discord4j-core:3.2.3'
-}
-```
+If you want to edit the bot's code and host it on your machine, it's possible!  
+You must follow the [installation guide](https://www.atlanta-bot.fr/installation/) to properly install it! Don't worry, it's fast and simple if you follow the guide!
 
-### Gradle Kotlin DSL
-```kotlin
-repositories {
-  mavenCentral()
-}
+## Links
 
-dependencies {
-  implementation("com.discord4j:discord4j-core:3.2.3")
-}
-```
+*   [Commands List](https://www.atlanta-bot.fr/commands)
+*   [Installation Guide](https://www.atlanta-bot.fr/installation)
+*   [F.A.Q](https://www.atlanta-bot.fr/faq/)
+*   [Discord](https://discord.gg/NPkySYKMkN)
+*   [Twitter](https://twitter.com/AtlantaBot)
+*   [Github](https://github.com/Androz2091/AtlantaBot/)
+*   [Dashboard](https://dashboard.atlanta-bot.fr)
 
-### Maven
-```xml
-<dependencies>
-  <dependency>
-    <groupId>com.discord4j</groupId>
-    <artifactId>discord4j-core</artifactId>
-    <version>3.2.3</version>
-  </dependency>
-</dependencies>
-```
+## Contributing
 
-### SBT
-```scala
-libraryDependencies ++= Seq(
-  "com.discord4j" % "discord4j-core" % "3.2.3"
-)
-```
+Before **creating an issue**, please ensure that it hasn't already been reported/suggested, and double-check the [F.A.Q](https://www.atlanta-bot.fr/faq).   
+And if you have a question, please ask it in the [Discord server](https://discord.gg/NPkySYKMkN) instead of opening an issue.
+If you wish to contribute to the Atlanta codebase or documentation, feel free to fork the repository and submit a pull request!
 
-## 🔀 Discord4J Versions
+## License
 
-Discord4J 3.2.x includes simpler and more powerful APIs to build requests, a new entity cache and performance improvements from dependency upgrades. Check our [Migration Guide](https://docs.discord4j.com/migrating-from-v3-1-to-v3-2) for more details.
-
-| Discord4J                                                   | Support          | Gateway/API | Intents                           | Interactions    |
-|-------------------------------------------------------------|------------------|-------------|-----------------------------------|-----------------|
-| [v3.3.x](https://github.com/Discord4J/Discord4J/tree/master)| In development   | v9          | Mandatory, non-privileged default | Fully supported |
-| [v3.2.x](https://github.com/Discord4J/Discord4J/tree/3.2.x) | Current          | v8          | Mandatory, non-privileged default | Fully supported |
-| [v3.1.x](https://github.com/Discord4J/Discord4J/tree/3.1.x) | Maintenance only | v6          | Optional, no intent default       | Maintenance only|
-
-See [our docs](https://docs.discord4j.com/versions) for more details about compatibility.
-
-## 🎉 Sponsors
-
-We would like to give a special thanks to all of our sponsors for providing us the funding to continue developing and hosting repository resources as well as driving forward initiatives for community programs. In particular, we would like to give a special shoutout to these wonderful individuals:
-
-* [decyg](https://github.com/d-g-n)
-* [nikammerlaan](https://github.com/nikammerlaan)
-* [ByteAlex](https://github.com/ByteAlex)
-* [Shadorc](https://github.com/Shadorc)
-
-## ⛰️ Large Bots
-
-Here are some real-world examples of large bots using Discord4J:
-
-* [Groovy](https://groovy.bot/) - Was the second-largest bot on Discord, serving music to over 4 million servers before its shutdown in August 2021.
-* [ZeroTwo](https://zerotwo.bot/) - An anime multi-purpose bot used in over 1 million servers.
-* [DisCal](https://www.discalbot.com/) - Implements Google Calendar into Discord as seamlessly and comprehensively as possible; serving over 21k servers.
-* [Shadbot](https://github.com/Shadorc/Shadbot) - A configurable multipurpose bot with music, gambling mini-games, video game stats, and more; serving nearly 12K servers before its shutdown in August 2021.
-
-Do you own a large bot using Discord4J? Ask an admin in our Discord or submit a pull request to add your bot to the list!
-
-## ⚛️ Reactive
-
-Discord4J uses [Project Reactor](https://projectreactor.io/) as the foundation for our asynchronous framework. Reactor provides a simple yet extremely powerful API that enables users to reduce resources and increase performance.
-
-```java
-public final class ExampleBot {
-
-  public static void main(final String[] args) {
-    final String token = args[0];
-    final DiscordClient client = DiscordClient.create(token);
-
-    client.login().flatMapMany(gateway -> gateway.on(MessageCreateEvent.class))
-      .map(MessageCreateEvent::getMessage)
-      .filter(message -> "!ping".equals(message.getContent()))
-      .flatMap(Message::getChannel)
-      .flatMap(channel -> channel.createMessage("Pong!"))
-      .blockLast();
-  }
-}
-```
-
-Discord4J also provides several methods to aide in better reactive chain compositions, such as `GatewayDiscordClient#withGateway` and `EventDispatcher#on` with an [error handling](https://docs.discord4j.com/error-handling) overload.
-
-```java
-final String token = args[0];
-final DiscordClient client = DiscordClient.create(token);
-
-client.withGateway(gateway -> {
-  final Publisher<?> pingPong = gateway.on(MessageCreateEvent.class, event ->
-    Mono.just(event.getMessage())
-      .filter(message -> "!ping".equals(message.getContent()))
-      .flatMap(Message::getChannel)
-      .flatMap(channel -> channel.createMessage("Pong!")));
-            
-    final Publisher<?> onDisconnect = gateway.onDisconnect()
-      .doOnTerminate(() -> System.out.println("Disconnected!"));
-
-    return Mono.when(pingPong, onDisconnect);
-  }).block();
-```
-
-## 🧵 Kotlin
-
-By utilizing Reactor, Discord4J has native integration with [Kotlin coroutines](https://kotlinlang.org/docs/reference/coroutines-overview.html) when paired with the [kotlinx-coroutines-reactor](https://github.com/Kotlin/kotlinx.coroutines/tree/master/reactive/kotlinx-coroutines-reactor) library.
-
-```kotlin
-val token = args[0]
-val client = DiscordClient.create(token)
-
-client.withGateway {
-  mono {
-    it.on(MessageCreateEvent::class.java)
-      .asFlow()
-      .collect {
-        val message = it.message
-        if (message.content == "!ping") {
-          val channel = message.channel.awaitSingle()
-          channel.createMessage("Pong!").awaitSingle()
-        }
-      }
-  }
-}
-.block()
-```
-
-## 📚 Examples
-
-### 📑 Message Embeds
-
-<img align="right" src="https://user-images.githubusercontent.com/6114565/82622174-b44a5900-9ba2-11ea-9bc1-2f558958f4cb.png" height=420px>
-
-```java
-// IMAGE_URL = https://cdn.betterttv.net/emote/55028cd2135896936880fdd7/3x
-// ANY_URL = https://www.youtube.com/watch?v=5zwY50-necw
-final MessageChannel channel = ...
-EmbedCreateSpec.Builder builder = EmbedCreateSpec.builder();
-builder.author("setAuthor", ANY_URL, IMAGE_URL);
-builder.image(IMAGE_URL);
-builder.title("setTitle/setUrl");
-builder.url(ANY_URL);
-builder.description("setDescription\n" +
-      "big D: is setImage\n" +
-      "small D: is setThumbnail\n" +
-      "<-- setColor");
-builder.addField("addField", "inline = true", true);
-builder.addField("addFIeld", "inline = true", true);
-builder.addField("addFile", "inline = false", false);
-builder.thumbnail(IMAGE_URL);
-builder.footer("setFooter --> setTimestamp", IMAGE_URL);
-builder.timestamp(Instant.now());
-channel.createMessage(builder.build()).block();
-```
-
-### 🏷️ Find Members by Role Name
-
-Users typically prefer working with names instead of IDs. This example will demonstrate how to search for all members that have a role with a specific name.
-
-```java
-final Guild guild = ...
-final Set<Member> roleMembers = new HashSet<>();
-
-for (final Member member : guild.getMembers().toIterable()) {
-  for (final Role role : member.getRoles().toIterable()) {
-    if ("Developers".equalsIgnoreCase(role.getName())) {
-      roleMembers.add(member);
-      break;
-    }
-  }
-}
-
-return roleMembers;
-```
-
-Alternatively, using Reactor:
-```java
-final Guild guild = ...
-return guild.getMembers()
-  .filterWhen(member -> member.getRoles()
-    .map(Role::getName)
-    .any("Developers"::equalsIgnoreCase));
-```
-
-### 🎵 Voice and Music
-
-Discord4J provides full support for voice connections and the ability to send audio to other users connected to the same channel. Discord4J can accept any [Opus](https://opus-codec.org/) audio source with [LavaPlayer](https://github.com/sedmelluq/lavaplayer) being the preferred solution for downloading and encoding audio from YouTube, SoundCloud, and other providers.
-
-To get started, you will first need to instantiate and configure an, conventionally global, `AudioPlayerManager`.
-
-```java
-public static final AudioPlayerManager PLAYER_MANAGER;
-
-static {
-  PLAYER_MANAGER = new DefaultAudioPlayerManager();
-  // This is an optimization strategy that Discord4J can utilize to minimize allocations
-  PLAYER_MANAGER.getConfiguration().setFrameBufferFactory(NonAllocatingAudioFrameBuffer::new);
-  AudioSourceManagers.registerRemoteSources(PLAYER_MANAGER);
-  AudioSourceManagers.registerLocalSource(PLAYER_MANAGER);
-}
-```
-
-Next, we need to allow Discord4J to read from an `AudioPlayer` to an `AudioProvider`.
-
-```java
-public final class LavaPlayerAudioProvider extends AudioProvider {
-
-  private final AudioPlayer player;
-  private final MutableAudioFrame frame;
-
-  public LavaPlayerAudioProvider(final AudioPlayer player) {
-    // Allocate a ByteBuffer for Discord4J's AudioProvider to hold audio data for Discord
-    super(ByteBuffer.allocate(StandardAudioDataFormats.DISCORD_OPUS.maximumChunkSize()));
-    // Set LavaPlayer's AudioFrame to use the same buffer as Discord4J's
-    frame = new MutableAudioFrame();
-    frame.setBuffer(getBuffer());
-    this.player = player;
-  }
-
-  @Override
-  public boolean provide() {
-    // AudioPlayer writes audio data to the AudioFrame
-    final boolean didProvide = player.provide(frame);
-
-    if (didProvide) {
-      getBuffer().flip();
-    }
-
-    return didProvide;
-  }
-}
-```
-
-Typically, audio players will have queues or internal playlists for users to be able to automatically cycle through songs as they are finished or requested to be skipped over. We can manage this queue externally and pass it to other areas of our code to allow tracks to be viewed, queued, or skipped over by creating an `AudioTrackScheduler`.
-
-```java
-public final class AudioTrackScheduler extends AudioEventAdapter {
-
-  private final List<AudioTrack> queue;
-  private final AudioPlayer player;
-
-  public AudioTrackScheduler(final AudioPlayer player) {
-    // The queue may be modifed by different threads so guarantee memory safety
-    // This does not, however, remove several race conditions currently present
-    queue = Collections.synchronizedList(new LinkedList<>());
-    this.player = player;
-  }
-
-  public List<AudioTrack> getQueue() {
-    return queue;
-  }
-
-  public boolean play(final AudioTrack track) {
-    return play(track, false);
-  }
-
-  public boolean play(final AudioTrack track, final boolean force) {
-    final boolean playing = player.startTrack(track, !force);
-
-    if (!playing) {
-      queue.add(track);
-    }
-
-    return playing;
-  }
-
-  public boolean skip() {
-    return !queue.isEmpty() && play(queue.remove(0), true);
-  }
-
-  @Override
-  public void onTrackEnd(final AudioPlayer player, final AudioTrack track, final AudioTrackEndReason endReason) {
-    // Advance the player if the track completed naturally (FINISHED) or if the track cannot play (LOAD_FAILED)
-    if (endReason.mayStartNext) {
-      skip();
-    }
-  }
-}
-```
-
-Currently, Discord only allows 1 voice connection per server. Working within this limitation, it is logical to think of the 3 components we have worked with thus far (`AudioPlayer`, `LavaPlayerAudioProvider`, and `AudioTrackScheduler`) to be correlated to a specific `Guild`, naturally unique by some `Snowflake`. Logically, it makes sense to combine these objects into one, so that they can be put into a `Map` for easier retrieval when connecting to a voice channel or when working with commands.
-
-```java
-public final class GuildAudioManager {
-
-  private static final Map<Snowflake, GuildAudioManager> MANAGERS = new ConcurrentHashMap<>();
-
-  public static GuildAudioManager of(final Snowflake id) {
-    return MANAGERS.computeIfAbsent(id, ignored -> new GuildAudioManager());
-  }
-
-  private final AudioPlayer player;
-  private final AudioTrackScheduler scheduler;
-  private final LavaPlayerAudioProvider provider;
-
-  private GuildAudioManager() {
-    player = PLAYER_MANAGER.createPlayer();
-    scheduler = new AudioTrackScheduler(player);
-    provider = new LavaPlayerAudioProvider(player);
-
-    player.addListener(scheduler);
-  }
-
-  // getters
-}
-```
-
-Finally, we need to connect to the voice channel. After connecting you are given a `VoiceConnection` object where you can utilize it later to disconnect from the voice channel by calling `VoiceConnection#disconnect`.
-
-```java
-final VoiceChannel channel = ...
-final AudioProvider provider = GuildAudioManager.of(channel.getGuildId()).getProvider();
-final VoiceConnection connection = channel.join(spec -> spec.setProvider(provider)).block();
-
-// In the AudioLoadResultHandler, add AudioTrack instances to the AudioTrackScheduler (and send notifications to users)
-PLAYER_MANAGER.loadItem("https://www.youtube.com/watch?v=dQw4w9WgXcQ", new AudioLoadResultHandler() { /* overrides */ })
-```
-
-### ❌ Disconnecting from a Voice Channel Automatically
-
-Typically, after everyone has left a voice channel, the bot should disconnect automatically as users typically forget to disconnect the bot manually. This problem can be solved rather elegantly using a reactive approach over an imperative one as the example below demonstrates.
-
-```java
-final VoiceChannel channel = ...
-final Mono<Void> onDisconnect = channel.join(spec -> { /* TODO Initialize */ })
-  .flatMap(connection -> {
-    // The bot itself has a VoiceState; 1 VoiceState signals bot is alone
-    final Publisher<Boolean> voiceStateCounter = channel.getVoiceStates()
-      .count()
-      .map(count -> 1L == count);
-
-    // After 10 seconds, check if the bot is alone. This is useful if
-    // the bot joined alone, but no one else joined since connecting
-    final Mono<Void> onDelay = Mono.delay(Duration.ofSeconds(10L))
-      .filterWhen(ignored -> voiceStateCounter)
-      .switchIfEmpty(Mono.never())
-      .then();
-
-    // As people join and leave `channel`, check if the bot is alone.
-    // Note the first filter is not strictly necessary, but it does prevent many unnecessary cache calls
-    final Mono<Void> onEvent = channel.getClient().getEventDispatcher().on(VoiceStateUpdateEvent.class)
-      .filter(event -> event.getOld().flatMap(VoiceState::getChannelId).map(channel.getId()::equals).orElse(false))
-      .filterWhen(ignored -> voiceStateCounter)
-      .next()
-      .then();
-
-    // Disconnect the bot if either onDelay or onEvent are completed!
-    return Mono.first(onDelay, onEvent).then(connection.disconnect());
-  });
-```
+Atlanta is licensed under the GPL 3.0 license. See the file `LICENSE` for more information. If you plan to use any part of this source code in your own bot, I w
